@@ -2,7 +2,7 @@ public class Person {
     String name ;//인스턴스 필드
     String address;
     boolean isVip;
-    static int count = 0;//클래스 필드
+    static int count = 0;
 
     public void printName(){
         System.out.println("내 이름은 "+name);
