@@ -20,7 +20,9 @@ public class Car {
     public void run(){
         System.out.println("전륜 구동입니다.");
     }
-
+    void run2(){
+        System.out.println("외부 패키지에서 사용 가능한가?");
+    }
     @Override
     public String toString() {
         return "자동차";
