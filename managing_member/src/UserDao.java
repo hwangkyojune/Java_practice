@@ -1,4 +1,5 @@
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,29 +11,32 @@ public class UserDao {
     public UserDao(String fileName){
         this.fileName = fileName;
     }
-    public List<? extends User> loadUser(){
+    public List<User> loadUser(){
 
         File file = new File(this.fileName);
 
         if(!file.exists()) return new ArrayList<User>();
 
-        ArrayList<User> usersList = null;
+        List<User> usersList = null;
         try{
 
             ObjectInputStream os = new ObjectInputStream(new FileInputStream(this.fileName));
-            usersList = (ArrayList<User>)os.readObject();
+            usersList = (List<User>)os.readObject();
 
         }catch(Exception e){
+            System.out.println("loadUser문제");
             System.exit(0);
         }
         return usersList;
     }
-    public void saveUser(ArrayList<? extends User> users){
+    public void saveUser(List<User> users){
         ObjectOutputStream oo;
         try{
             oo = new ObjectOutputStream( new FileOutputStream(this.fileName));
             oo.writeObject(users);
+            oo.close();
         }catch(Exception e1){
+            System.out.println(e1);
             System.exit(0);
         }
     }
