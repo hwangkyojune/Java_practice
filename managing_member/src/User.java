@@ -20,6 +20,18 @@ public class User implements Serializable {
                 '}';
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
     public String getName() {
         return name;
     }

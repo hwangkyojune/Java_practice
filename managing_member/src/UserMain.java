@@ -3,7 +3,7 @@ import java.util.List;
 public class UserMain {
     public static void main(String[] args) {
         UserUi userUi = new UserUi();
-        UserDao userDao = new UserDao("users.dat");
+        UserDao userDao = new UserDao("usersinfo.dat");
         List<User> users = userDao.loadUser();
 
         while(true){
@@ -17,6 +17,10 @@ public class UserMain {
                 users.add(user);
             }else if(menuId == 2){
                 userUi.userList(users);
+            }else if(menuId == 3){
+                userUi.delUser(users);
+            }else if(menuId == 4){
+                userUi.modUser(users);
             }
         }
 

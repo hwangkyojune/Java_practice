@@ -24,7 +24,7 @@ public class UserDao {
             usersList = (List<User>)os.readObject();
 
         }catch(Exception e){
-            System.out.println("loadUser문제");
+            System.out.println(e);
             System.exit(0);
         }
         return usersList;
