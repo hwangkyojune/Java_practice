@@ -89,6 +89,8 @@ public class UserUi {
                 return users;
             }
         }
+        System.out.println("삭제할 회원이 없습니다.");
+        System.out.println("");
         return users;
     }
     public List<User>  modUser(List<User> users){
@@ -123,6 +125,8 @@ public class UserUi {
             }
 
         }
+        System.out.println("수정할 회원이 없습니다.");
+        System.out.println("");
         return users;
     }
 
